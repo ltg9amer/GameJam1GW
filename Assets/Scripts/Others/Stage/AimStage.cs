@@ -12,6 +12,11 @@ public class AimStage : MonoBehaviour
 
     private void OnEnable()
     {
+        Init();
+    }
+
+    private void Init()
+    {
         for (int i = 0; i < 10; i++)
         {
             GameObject obj = Instantiate(ball, SetPos(), Quaternion.identity);

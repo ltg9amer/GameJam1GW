@@ -16,11 +16,12 @@ public class ArrowStage : MonoBehaviour
 
     private void OnEnable()
     {
+        Init();
+    }
+
+    private void Init()
+    {
         pointer = 0;
-        Debug.Log((int)KeyCode.UpArrow);
-        Debug.Log((int)KeyCode.DownArrow);
-        Debug.Log((int)KeyCode.RightArrow);
-        Debug.Log((int)KeyCode.LeftArrow);
         for (int i = 0; i < arrowLel; i++)
         {
             GameObject obj = Instantiate(arrow, new Vector2(transform.position.x - (arrowLel / 2) + i * 1.2f, transform.position.x), Quaternion.identity);
