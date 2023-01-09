@@ -34,7 +34,7 @@ public class ClickStage : MonoBehaviour
         if(count >= maxCount)
         {
             Debug.Log("다음 스테이지");
-            Destroy(gameObject);
+            GameManager.instance.GamePlaying();
         }
     }
 }

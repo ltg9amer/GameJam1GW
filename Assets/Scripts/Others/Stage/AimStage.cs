@@ -32,7 +32,7 @@ public class AimStage : MonoBehaviour
         if(transform.GetChild(2).name == "QWEOQW_2312_123_QVMK")
         {
             Debug.Log("다음 스테이지");
-            Destroy(gameObject);
+            GameManager.instance.GamePlaying();
         }
     }
 

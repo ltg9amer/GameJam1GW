@@ -163,9 +163,9 @@ public class GameManager : MonoBehaviour
             Destroy(currentStageObject);
         }
 
-        if (++currentStage != stagePrefabs.Count)
+        if (currentStage != stagePrefabs.Count)
         {
-            currentStageObject = Instantiate(stagePrefabs[currentStage - 1]);
+            currentStageObject = Instantiate(stagePrefabs[++currentStage - 1]);
         }
         else
         {
@@ -177,10 +177,10 @@ public class GameManager : MonoBehaviour
     {
         isPlaying = false;
 
+        Debug.Log(currentStage);
         if (currentStage == stagePrefabs.Count)
         {
             isClear = true;
-
             audioSource.Stop();
         }
         else

@@ -20,7 +20,7 @@ public class BubbleStage : MonoBehaviour
     {
         for (int i = 0; i < 5; i++)
         {
-            GameObject obj = Instantiate(bubble, new Vector2(UnityEngine.Random.Range(-4.5f, 4.5f), UnityEngine.Random.Range(-4.5f, 4.5f)), quaternion.identity);
+            GameObject obj = Instantiate(bubble, new Vector2(UnityEngine.Random.Range(-4f, 4f), UnityEngine.Random.Range(-4f, 4f)), quaternion.identity);
             obj.transform.SetParent(rootObj.transform);
         }
 
@@ -31,31 +31,31 @@ public class BubbleStage : MonoBehaviour
 
     void Update()
     {
-        if(rootObj.transform.GetChild(1).name == "SFDIO_DSFKJN_E123_GWQ")
+        if (rootObj.transform.GetChild(1).name == "SFDIO_DSFKJN_E123_GWQ")
         {
             Debug.Log("다음 스테이지");
-            Destroy(rootObj);
+            GameManager.instance.GamePlaying();
         }
 
         x = mainCam.ScreenToWorldPoint(Input.mousePosition).x;
         y = mainCam.ScreenToWorldPoint(Input.mousePosition).y;
 
-        if (x <= -4.5f)
+        if (x <= -4f)
         {
-            x = -4.5f;
+            x = -4f;
         }
-        else if (x >= 4.5f)
+        else if (x >= 4f)
         {
-            x = 4.5f;
+            x = 4f;
         }
 
-        if (y <= -4.5f)
+        if (y <= -4f)
         {
-            y = -4.5f;
+            y = -4f;
         }
-        else if (y >= 4.5f)
+        else if (y >= 4f)
         {
-            y = 4.5f;
+            y = 4f;
         }
 
         transform.position = new Vector2(x, y);

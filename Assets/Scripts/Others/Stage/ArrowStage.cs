@@ -75,7 +75,7 @@ public class ArrowStage : MonoBehaviour
         if(arrowList.Count == 0)
         {
             Debug.Log("다음 스테이지");
-            Destroy(gameObject);
+            GameManager.instance.GamePlaying();
         }
     }
 }
