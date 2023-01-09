@@ -73,6 +73,7 @@ public class ArrowStage : MonoBehaviour
         arrowList.RemoveAt(pointer);
         if(arrowList.Count == 0)
         {
+            Destroy(gameObject);
             Debug.Log("다음 스테이지");
         }
     }
