@@ -5,14 +5,30 @@ using UnityEngine.UI;
 
 public class SymmetryStage : MonoBehaviour
 {
-    [SerializeField] private Image _image1;
-    [SerializeField] private Image _image2;
-    
+    [SerializeField] Image lImage1;
+    [SerializeField] Image lImage2;
+    [SerializeField] Image lImage3;
+    [SerializeField] Image lImage4;
+
+    [SerializeField] Image rImage1;
+    [SerializeField] Image rImage2;
+    [SerializeField] Image rImage3;
+    [SerializeField] Image rImage4;
+
     private void Update()
     {
-        if(_image1.color == _image2.color)
+        if (lImage1.color == rImage1.color)
         {
-            GameManager.instance.GamePlaying();
+            if (lImage2.color == rImage2.color)
+            {
+                if (lImage3.color == rImage3.color)
+                {
+                    if (lImage4.color == rImage4.color)
+                    {
+                        GameManager.instance.GamePlaying();
+                    }
+                }
+            }
         }
     }
 }
