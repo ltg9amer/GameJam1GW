@@ -149,6 +149,7 @@ public class GameManager : MonoBehaviour
                     Destroy(playButton.gameObject);
                     timAnimator.SetTrigger("Run");
 
+                    Timer.instance.StartRecord();
                     isPlaying = true;
 
                     GamePlaying();
@@ -176,6 +177,7 @@ public class GameManager : MonoBehaviour
     public void GameStop()
     {
         isPlaying = false;
+        Timer.instance.StopRecord();
 
         if (currentStage == stagePrefabs.Count)
         {

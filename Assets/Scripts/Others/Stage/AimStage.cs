@@ -29,7 +29,7 @@ public class AimStage : MonoBehaviour
 
     private void Update()
     {
-        if(transform.GetChild(2).name == "QWEOQW_2312_123_QVMK")
+        if(transform.GetChild(3).name == "QWEOQW_2312_123_QVMK")
         {
             Debug.Log("다음 스테이지");
             GameManager.instance.GamePlaying();

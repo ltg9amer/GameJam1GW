@@ -8,6 +8,7 @@ public class StarCatchStage : MonoBehaviour
 {
     Sequence seq;
 
+    [SerializeField] private GameObject hitArea;
     [SerializeField] private Image image;
     private GameObject cam;
 
@@ -15,6 +16,7 @@ public class StarCatchStage : MonoBehaviour
 
     private void OnEnable()
     {
+        hitArea.transform.position = new Vector3(Random.Range(-3f, 3f), transform.position.y, transform.position.z);
         cam = Camera.main.gameObject;
         Move();
     }
@@ -26,6 +28,7 @@ public class StarCatchStage : MonoBehaviour
             Debug.Log(1);
             if (isTiming == true)
             {
+                seq.Kill();
                 GameManager.instance.GamePlaying();
             }
             else

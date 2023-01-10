@@ -6,16 +6,16 @@ using System;
 
 public class Timer : MonoBehaviour
 {
+    public static Timer instance;
+
     private float minute = 0;
     private float second = 0;
 
     [SerializeField] private bool isRecording = true;
 
-    TextMeshProUGUI timerTxt;
-
     private void Awake()
     {
-        timerTxt = GetComponent<TextMeshProUGUI>();
+        instance = this;
     }
 
     private void Update()
@@ -26,11 +26,11 @@ public class Timer : MonoBehaviour
             minute = MathF.Floor(second / 60);
             if (second >= 10)
             {
-                timerTxt.text = $"0{minute} : {Mathf.Floor(second)}";
+                Debug.Log($"0{minute} : {Mathf.Floor(second % 60)}");
             }
             else
             {
-                timerTxt.text = $"0{minute} : 0{Mathf.Floor(second)}";
+                Debug.Log($"0{minute} : 0{Mathf.Floor(second % 60)}");
             }
         }
     }
