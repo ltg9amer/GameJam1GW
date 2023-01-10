@@ -6,6 +6,9 @@ using DG.Tweening;
 public class StarCatchStage : MonoBehaviour
 {
     [SerializeField] private bool clickDelay = false;
+    Sequence seq;
+
+    bool isTiming = false;
 
     private void OnEnable()
     {
@@ -16,19 +19,23 @@ public class StarCatchStage : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && clickDelay == false)
         {
+            Debug.Log(1);
             clickDelay = true;
-            Invoke("DelayChange", 0.5f);
+            Invoke("DelayChange", 0.2f);
         }
     }
 
     void DelayChange()
     {
         clickDelay = false;
+        seq.Kill();
+        transform.position = new Vector2(-3, 0);
+        Move();
     }
 
     private void Move()
     {
-        Sequence seq = DOTween.Sequence();
+        seq = DOTween.Sequence();
         seq.Append(transform.DOMove(new Vector2(3, 0), 0.5f).SetEase(Ease.Linear))
         .Append(transform.DOMove(new Vector2(-3, 0), 0.5f).SetEase(Ease.Linear))
         .OnComplete(() =>
@@ -40,16 +47,12 @@ public class StarCatchStage : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        isTiming = true;
         Debug.Log("OnTriggerEnter");
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        if (Input.GetMouseButtonDown(0) && clickDelay == false)
-        {
-            //오디오소스 플레이시키기
-            Debug.Log(1);
-            GameManager.instance.GamePlaying();
-        }
+        isTiming = false;
     }
 }
