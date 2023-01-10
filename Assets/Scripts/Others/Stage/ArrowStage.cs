@@ -8,7 +8,7 @@ public class ArrowStage : MonoBehaviour
 {
     [SerializeField] private int arrowLel = 6;
 
-    [SerializeField] private GameObject arrow;
+    [SerializeField] List<GameObject> prefabsList = new List<GameObject>();
 
     [SerializeField] List<GameObject> arrowList = new List<GameObject>();
 
@@ -24,7 +24,7 @@ public class ArrowStage : MonoBehaviour
         pointer = 0;
         for (int i = 0; i < arrowLel; i++)
         {
-            GameObject obj = Instantiate(arrow, new Vector2(transform.position.x - (arrowLel / 2) + i * 1.2f, transform.position.x), Quaternion.identity);
+            GameObject obj = Instantiate(prefabsList[UnityEngine.Random.Range(0, prefabsList.Count)], new Vector2(transform.position.x - (arrowLel / 2) + i * 1.2f, transform.position.x), Quaternion.identity);
             int a = UnityEngine.Random.Range(0, 4);
             obj.transform.rotation = Quaternion.Euler(0, 0, a * 90);
             obj.name = a.ToString();
@@ -40,7 +40,7 @@ public class ArrowStage : MonoBehaviour
             if (arrowList[pointer].name == "0")
             {
                 RemoveObj();
-            }   
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.DownArrow))
@@ -72,9 +72,9 @@ public class ArrowStage : MonoBehaviour
     {
         Destroy(arrowList[pointer]);
         arrowList.RemoveAt(pointer);
-        if(arrowList.Count == 0)
+        if (arrowList.Count == 0)
         {
-            Debug.Log("´ÙÀ½ ½ºÅ×ÀÌÁö");
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
             GameManager.instance.GamePlaying();
         }
     }

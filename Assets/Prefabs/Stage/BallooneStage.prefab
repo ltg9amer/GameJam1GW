@@ -76,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 50
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0.0990566, b: 0.0990566, a: 1}
+  m_Sprite: {fileID: 1814967563, guid: c637529a6227b0e4e87f7c5a2837fa95, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -99,7 +99,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8866e0655c2230540a3a4a4bda3a760f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubble: {fileID: 5347012551910879204, guid: ba78fb3cd259c574fb4e877803cf7bda, type: 3}
+  balloon:
+  - {fileID: 5347012551910879204, guid: 1c6190fae36361b4a96f7be71a7b39f4, type: 3}
+  - {fileID: 5347012551910879204, guid: 0b34f657c3d960049bc7d634e1f9a2a5, type: 3}
+  - {fileID: 5347012551910879204, guid: 13db6136f554d354abdc7cba75ae88d8, type: 3}
   rootObj: {fileID: 1087236365483570020}
 --- !u!61 &1087236364955055368
 BoxCollider2D:
@@ -118,7 +121,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.3125, y: 1.375}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -158,7 +161,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1087236365483570022}
   m_Layer: 0
-  m_Name: BubbleStage
+  m_Name: BallooneStage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1,15 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class BubbleStage : MonoBehaviour
 {
     Camera mainCam;
     float x, y;
 
-    [SerializeField] private GameObject bubble;
+    [SerializeField] private List<GameObject> balloon = new List<GameObject>();
     [SerializeField] private GameObject rootObj;
     private TextMeshProUGUI noticeText;
 
@@ -23,7 +25,7 @@ public class BubbleStage : MonoBehaviour
     {
         for (int i = 0; i < 5; i++)
         {
-            GameObject obj = Instantiate(bubble, new Vector2(UnityEngine.Random.Range(-4f, 4f), UnityEngine.Random.Range(-4f, 4f)), quaternion.identity);
+            GameObject obj = Instantiate(balloon[UnityEngine.Random.Range(0, balloon.Count)], new Vector2(UnityEngine.Random.Range(-4f, 4f), UnityEngine.Random.Range(-4f, 4f)), quaternion.identity);
             obj.transform.SetParent(rootObj.transform);
         }
 

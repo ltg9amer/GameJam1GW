@@ -282,5 +282,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrowLel: 6
-  arrow: {fileID: 7826166213347907251, guid: c9996bfc4da3b894886ae1c2b3ec6e7a, type: 3}
+  prefabsList:
+  - {fileID: 7826166213347907251, guid: fc6d47ad9a4a05f449900fef3704c580, type: 3}
+  - {fileID: 7826166213347907251, guid: 44908a63fbb617249be89b6d77fa6c28, type: 3}
+  - {fileID: 7826166213347907251, guid: 97e4e9baec41c584baf0cc17f83eb4a8, type: 3}
+  - {fileID: 7826166213347907251, guid: c9996bfc4da3b894886ae1c2b3ec6e7a, type: 3}
   arrowList: []
