@@ -177,7 +177,6 @@ public class GameManager : MonoBehaviour
     {
         isPlaying = false;
 
-        Debug.Log(currentStage);
         if (currentStage == stagePrefabs.Count)
         {
             isClear = true;
