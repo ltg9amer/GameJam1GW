@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2805685707078190825}
   - component: {fileID: 2805685707078190824}
   - component: {fileID: 8038864144427117770}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Obstacle (2)
   m_TagString: FallingObj
   m_Icon: {fileID: 0}
@@ -79,7 +79,7 @@ GameObject:
   - component: {fileID: 2805685707127033518}
   - component: {fileID: 2805685707127033513}
   - component: {fileID: 2805685707127033512}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 2805685708761621309}
   - component: {fileID: 2805685708761621304}
   - component: {fileID: 2805685708761621311}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}

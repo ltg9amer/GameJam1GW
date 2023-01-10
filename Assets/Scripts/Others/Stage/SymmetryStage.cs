@@ -17,18 +17,9 @@ public class SymmetryStage : MonoBehaviour
 
     private void Update()
     {
-        if (lImage1.color == rImage1.color)
+        if (lImage1.color == rImage1.color && lImage2.color == rImage2.color && lImage3.color == rImage3.color && lImage4.color == rImage4.color)
         {
-            if (lImage2.color == rImage2.color)
-            {
-                if (lImage3.color == rImage3.color)
-                {
-                    if (lImage4.color == rImage4.color)
-                    {
-                        GameManager.instance.GamePlaying();
-                    }
-                }
-            }
+            GameManager.instance.GamePlaying();
         }
     }
 }

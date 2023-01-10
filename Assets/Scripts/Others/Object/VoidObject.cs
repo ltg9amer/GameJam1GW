@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class VoidObject : MonoBehaviour
 {
     private Camera mainCam;
+    private TextMeshProUGUI noticeText;
     private float x;
 
     [SerializeField] List<GameObject> obstacles = new List<GameObject>();
@@ -14,6 +16,8 @@ public class VoidObject : MonoBehaviour
     private void OnEnable()
     {
         mainCam = Camera.main;
+        noticeText = GameObject.Find("NoticeText").GetComponent<TextMeshProUGUI>();
+        noticeText.text = "떨어지는 블록을 피하세요!";
         InitStage();
     }
 
@@ -36,6 +40,7 @@ public class VoidObject : MonoBehaviour
             yield return new WaitForSeconds(0.3f);
         }
         yield return new WaitForSeconds(1.2f);
+        noticeText.text = string.Empty;
         GameManager.instance.GamePlaying();
     }
 
