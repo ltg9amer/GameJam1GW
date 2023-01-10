@@ -12,7 +12,12 @@ public class TypingStage : MonoBehaviour
     private void OnEnable()
     {
         sampleText.text = sampleStrings[Random.Range(0, sampleStrings.Count)];
-        typingField.ActivateInputField();
+
+        Invoke("Select", 0f);
+    }
+
+    private void Select()
+    {
         typingField.Select();
     }
 
@@ -24,6 +29,7 @@ public class TypingStage : MonoBehaviour
         }
         else
         {
+            typingField.ActivateInputField();
             typingField.text = string.Empty;
         }
     }
