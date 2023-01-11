@@ -18,11 +18,16 @@ public class SettingPanel : MonoBehaviour
 
     public void OnClick()
     {
+        if (!GameManager.instance.CanLoadSetting) return;
 
         if (settingPanel.activeSelf)
         {
-            settingPanel.SetActive(!settingPanel.activeSelf);
-            settingPanel.transform.DOMove(hidePos.transform.position, 1);
+            Sequence seq = DOTween.Sequence()
+            .Append(settingPanel.transform.DOMove(hidePos.transform.position, 1))
+            .AppendCallback(() =>
+            {
+                settingPanel.SetActive(!settingPanel.activeSelf);
+            });
             //¼û±â±â
         }
         else

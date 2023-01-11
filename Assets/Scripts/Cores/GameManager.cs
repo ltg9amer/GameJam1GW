@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
     private bool isBeforeStart = true;
     private bool isBeforePlay;
     private bool isPlaying;
+    private bool canLoadSetting = true;
+    public bool CanLoadSetting => canLoadSetting;
     private int currentStage;
 
     private void Awake()
@@ -100,6 +102,11 @@ public class GameManager : MonoBehaviour
             isBeforePlay = false;
 
             Sequence sequence = DOTween.Sequence()
+                .AppendCallback(() =>
+                {
+                    canLoadSetting = false;
+                    stageText.text = "Load Game\nPlease Wait";
+                })
                 .Append(playButton.GetComponent<UnityEngine.UI.Image>().DOFade(0f, 1f))
                 .Join(playText.DOColor(Color.white, 1f))
                 .AppendCallback(() =>
@@ -147,8 +154,8 @@ public class GameManager : MonoBehaviour
                     Destroy(playButton.gameObject);
                     timAnimator.SetTrigger("Run");
                     Timer.instance.StartRecord();
-                    isPlaying = true;
 
+                    isPlaying = true;
                     GamePlaying();
                 });
         }
@@ -174,6 +181,7 @@ public class GameManager : MonoBehaviour
     public void GameStop()
     {
         isPlaying = false;
+        canLoadSetting = true;
         Timer.instance.StopRecord();
 
         if (currentStage == stagePrefabs.Count)
