@@ -1176,6 +1176,7 @@ MonoBehaviour:
   - {fileID: 122324123310338846, guid: f8630046d08f18248a1de6eff6dc1fc6, type: 3}
   - {fileID: 1945762187021100789, guid: 67e88c8881722b94285e4a7d8ae53375, type: 3}
   - {fileID: 3456815498110713695, guid: 1ebdabf7061d1e24e8a88601fdb54280, type: 3}
+  - {fileID: 3378040390434981910, guid: cde45ecf86a23674ea1be7d7f1c680e2, type: 3}
   isClear: 0
 --- !u!4 &1815199814
 Transform:
