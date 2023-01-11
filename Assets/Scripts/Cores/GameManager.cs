@@ -10,7 +10,9 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     [SerializeField] private List<GameObject> stagePrefabs;
-    public bool isClear;
+    private bool isClear;
+    public bool IsClear => isClear;
+
     private GameObject playground;
     private GameObject titleText;
     private GameObject pressStartText;
@@ -29,7 +31,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Cursor.SetCursor(mouseCursorTexture, new Vector2(0, 0), CursorMode.ForceSoftware);
-        
+
         if (instance == null)
         {
             instance = this;
@@ -97,32 +99,25 @@ public class GameManager : MonoBehaviour
         {
             isBeforePlay = false;
 
-            Sequence sequence = DOTween.Sequence();
-
-            sequence.Append(playButton.GetComponent<UnityEngine.UI.Image>().DOFade(0f, 1f))
+            Sequence sequence = DOTween.Sequence()
+                .Append(playButton.GetComponent<UnityEngine.UI.Image>().DOFade(0f, 1f))
                 .Join(playText.DOColor(Color.white, 1f))
                 .AppendCallback(() =>
                 {
-                    playText.text = "Pla";
-                })
-                .AppendInterval(0.25f)
-                .AppendCallback(() =>
-                {
-                    playText.text = "Pl";
-                })
-                .AppendInterval(0.25f)
-                .AppendCallback(() =>
-                {
-                    playText.text = "P";
-                })
-                .AppendInterval(0.25f)
-                .AppendCallback(() =>
-                {
-                    playText.text = "";
+                    playText.text = "음원 : Hawaii Five-O";
                 })
                 .AppendInterval(1f)
+                .Append(playText.DOFade(0, 0.25f))
                 .AppendCallback(() =>
                 {
+                    playText.DOFade(1, 0);
+                    playText.text = "음원 길이 : 약 1분 30초";
+                })
+                .AppendInterval(1f)
+                .Append(playText.DOFade(0, 0.25f))
+                .AppendCallback(() =>
+                {
+                    playText.DOFade(1, 0);
                     audioSource.Play();
                     playText.text = "5";
                 })
@@ -151,7 +146,6 @@ public class GameManager : MonoBehaviour
                 {
                     Destroy(playButton.gameObject);
                     timAnimator.SetTrigger("Run");
-
                     Timer.instance.StartRecord();
                     isPlaying = true;
 
