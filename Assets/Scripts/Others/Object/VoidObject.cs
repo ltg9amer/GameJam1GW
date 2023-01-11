@@ -74,13 +74,13 @@ public class VoidObject : MonoBehaviour
     {
         x = mainCam.ScreenToWorldPoint(Input.mousePosition).x;
 
-        if (x > 4)
+        if (x > 3.6f)
         {
-            x = 4;
+            x = 3.6f;
         }
-        else if (x < -4)
+        else if (x < -3.6f)
         {
-            x = -4;
+            x = -3.6f;
         }
 
         transform.position = new Vector2(x, transform.position.y);
