@@ -1159,6 +1159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f812e09bcd2d3643a528ebbfd763cb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mouseCursorTexture: {fileID: 2800000, guid: 92e6be2c1b6a26f48ab183ba92850000, type: 3}
   stagePrefabs:
   - {fileID: 2271023012886232148, guid: 78e0349ae17210f46a581e0cf901ce3c, type: 3}
   - {fileID: 6980660171451239586, guid: c700d354e3e8f7546b1d42b7507fc119, type: 3}

@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private Texture2D mouseCursorTexture;
     public static GameManager instance;
 
     [SerializeField] private List<GameObject> stagePrefabs;
@@ -27,6 +28,8 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        Cursor.SetCursor(mouseCursorTexture, new Vector2(0, 0), CursorMode.ForceSoftware);
+        
         if (instance == null)
         {
             instance = this;

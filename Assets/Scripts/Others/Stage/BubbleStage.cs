@@ -23,6 +23,8 @@ public class BubbleStage : MonoBehaviour
 
     private void OnEnable()
     {
+        UnityEngine.Cursor.visible = false;
+
         for (int i = 0; i < 5; i++)
         {
             GameObject obj = Instantiate(balloon[UnityEngine.Random.Range(0, balloon.Count)], new Vector2(UnityEngine.Random.Range(-4f, 4f), UnityEngine.Random.Range(-4f, 4f)), quaternion.identity);
@@ -69,8 +71,8 @@ public class BubbleStage : MonoBehaviour
         transform.position = new Vector2(x, y);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnDisable()
     {
-
+        UnityEngine.Cursor.visible = true;
     }
 }
