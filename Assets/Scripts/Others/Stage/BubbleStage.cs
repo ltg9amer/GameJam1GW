@@ -27,7 +27,9 @@ public class BubbleStage : MonoBehaviour
 
         for (int i = 0; i < 5; i++)
         {
-            GameObject obj = Instantiate(balloon[UnityEngine.Random.Range(0, balloon.Count)], new Vector2(UnityEngine.Random.Range(-4f, 4f), UnityEngine.Random.Range(-4f, 4f)), quaternion.identity);
+            GameObject obj = Instantiate(balloon[UnityEngine.Random.Range(0, balloon.Count)],
+                new Vector2(UnityEngine.Random.Range(-4f, 4f), UnityEngine.Random.Range(-4f, 3f)),
+                quaternion.identity);
             obj.transform.SetParent(rootObj.transform);
         }
 

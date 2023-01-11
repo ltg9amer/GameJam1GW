@@ -20,6 +20,9 @@ public class RotateGun : MonoBehaviour
         GameObject obj1 = Instantiate(target, new Vector2(Random.Range(-4f, 4f), 4), Quaternion.identity);
         obj1.transform.SetParent(rootObj.transform, true);
 
+        GameObject obj1_2 = Instantiate(target, new Vector2(Random.Range(-4f, 4f), 4), Quaternion.identity);
+        obj1.transform.SetParent(rootObj.transform, true);
+
         GameObject obj2 = Instantiate(target, new Vector2(Random.Range(-4f, 4f), -4), Quaternion.identity);
         obj2.transform.SetParent(rootObj.transform, true);
 
@@ -28,7 +31,10 @@ public class RotateGun : MonoBehaviour
 
         GameObject obj4 = Instantiate(target, new Vector2(-4, Random.Range(-4f, 4f)), Quaternion.identity);
         obj4.transform.SetParent(rootObj.transform, true);
-        
+
+        GameObject obj4_2 = Instantiate(target, new Vector2(-4, Random.Range(-4f, 4f)), Quaternion.identity);
+        obj4.transform.SetParent(rootObj.transform, true);
+
         GameObject obj5 = new GameObject();
         obj5.name = "SDFDSLK-POOPKMAQ-QW123Q";
         obj5.transform.SetParent(rootObj.transform);
