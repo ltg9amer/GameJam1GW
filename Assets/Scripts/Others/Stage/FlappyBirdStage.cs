@@ -87,7 +87,7 @@ public class FlappyBirdStage : MonoBehaviour
         }
         else if (collision.name == "Nest")
         {
-            noticeText.transform.position = new Vector3(0f, 150f);
+            noticeText.transform.position = new Vector3(0f, 150f / 108f);
             noticeText.text = string.Empty;
             GameManager.instance.GamePlaying();
         }
