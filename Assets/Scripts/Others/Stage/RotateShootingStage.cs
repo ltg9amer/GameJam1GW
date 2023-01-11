@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class RotateGun : MonoBehaviour
+public class RotateShootingStage : MonoBehaviour
 {
     [SerializeField] private GameObject target;
     [SerializeField] private GameObject bullet;
@@ -17,23 +17,17 @@ public class RotateGun : MonoBehaviour
     private void OnEnable()
     {
 
-        GameObject obj1 = Instantiate(target, new Vector2(Random.Range(-4f, 4f), 4), Quaternion.identity);
+        GameObject obj1 = Instantiate(target, new Vector2(Random.Range(-1f, 1f), 4), Quaternion.identity);
         obj1.transform.SetParent(rootObj.transform, true);
 
-        GameObject obj1_2 = Instantiate(target, new Vector2(Random.Range(-4f, 4f), 4), Quaternion.identity);
-        obj1_2.transform.SetParent(rootObj.transform, true);
-
-        GameObject obj2 = Instantiate(target, new Vector2(Random.Range(-4f, 4f), -4), Quaternion.identity);
+        GameObject obj2 = Instantiate(target, new Vector2(Random.Range(-1f, 1f), -4), Quaternion.identity);
         obj2.transform.SetParent(rootObj.transform, true);
 
-        GameObject obj3 = Instantiate(target, new Vector2(4, Random.Range(-4f, 4f)), Quaternion.identity);
+        GameObject obj3 = Instantiate(target, new Vector2(4, Random.Range(-1f, 1f)), Quaternion.identity);
         obj3.transform.SetParent(rootObj.transform, true);
 
-        GameObject obj4 = Instantiate(target, new Vector2(-4, Random.Range(-4f, 4f)), Quaternion.identity);
+        GameObject obj4 = Instantiate(target, new Vector2(-4, Random.Range(-1f, 1f)), Quaternion.identity);
         obj4.transform.SetParent(rootObj.transform, true);
-
-        GameObject obj4_2 = Instantiate(target, new Vector2(-4, Random.Range(-4f, 4f)), Quaternion.identity);
-        obj4_2.transform.SetParent(rootObj.transform, true);
 
         GameObject obj5 = new GameObject();
         obj5.name = "SDFDSLK-POOPKMAQ-QW123Q";
@@ -64,7 +58,7 @@ public class RotateGun : MonoBehaviour
             onClick = false;
         }
 
-        if (rootObj.transform.GetChild(2).name == "SDFDSLK-POOPKMAQ-QW123Q")
+        if (rootObj.transform.GetChild(0).name == "SDFDSLK-POOPKMAQ-QW123Q")
         {
             GameManager.instance.GamePlaying();
         }
