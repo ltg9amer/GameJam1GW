@@ -29,6 +29,10 @@ public class RotateGun : MonoBehaviour
         GameObject obj4 = Instantiate(target, new Vector2(-4, Random.Range(-4f, 4f)), Quaternion.identity);
         obj4.transform.SetParent(rootObj.transform, true);
         
+        GameObject obj5 = new GameObject();
+        obj5.name = "SDFDSLK-POOPKMAQ-QW123Q";
+        obj5.transform.SetParent(rootObj.transform);
+
         StartCoroutine(Fire());
     }
 
@@ -36,7 +40,7 @@ public class RotateGun : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.3f);
             yield return new WaitUntil(() => onClick);
             Instantiate(bullet, transform.position, Quaternion.Euler(0, 0, angle));
         }
@@ -54,6 +58,11 @@ public class RotateGun : MonoBehaviour
             onClick = false;
         }
 
+        if (rootObj.transform.GetChild(2).name == "SDFDSLK-POOPKMAQ-QW123Q")
+        {
+            GameManager.instance.GamePlaying();
+        }
+
         RotateMouse();
     }
 
@@ -65,8 +74,6 @@ public class RotateGun : MonoBehaviour
             transform.position.y - mouseWorldPosition.y,
             transform.position.x - mouseWorldPosition.x) * Mathf.Rad2Deg + 90;
 
-        Debug.Log(angle);
-        // YÃà È¸Àü
         transform.rotation = Quaternion.Euler(new Vector3(0f, 0, angle));
     }
 }
