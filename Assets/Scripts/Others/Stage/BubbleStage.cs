@@ -25,7 +25,7 @@ public class BubbleStage : MonoBehaviour
     {
         UnityEngine.Cursor.visible = false;
 
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 7; i++)
         {
             GameObject obj = Instantiate(balloon[UnityEngine.Random.Range(0, balloon.Count)],
                 new Vector2(UnityEngine.Random.Range(-4f, 4f), UnityEngine.Random.Range(-4f, 3f)),

@@ -316,9 +316,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Current Stage
+  m_text: 'Before Start
 
-    Stage 0'
+    Wait Lobby'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9192dee102ce3584ab6be141b418bd9d, type: 2}
   m_sharedMaterial: {fileID: -8565676723556663594, guid: 9192dee102ce3584ab6be141b418bd9d, type: 2}
@@ -1165,18 +1165,20 @@ MonoBehaviour:
   - {fileID: 6980660171451239586, guid: c700d354e3e8f7546b1d42b7507fc119, type: 3}
   - {fileID: 6980660171451239586, guid: c700d354e3e8f7546b1d42b7507fc119, type: 3}
   - {fileID: 6980660171451239586, guid: c700d354e3e8f7546b1d42b7507fc119, type: 3}
+  - {fileID: 2056249576601250102, guid: 24057d47975e2264685b10526b72fdc3, type: 3}
   - {fileID: 1087236365483570020, guid: 6d6f4459b67dd74468331296fa066d2b, type: 3}
+  - {fileID: 2377081260223177495, guid: 2318f1d975dc15744b456bf50fe8ad52, type: 3}
   - {fileID: 2377081260223177495, guid: c6aaf465f395c4348b0c38d67ec622ff, type: 3}
   - {fileID: 3223587588923494643, guid: 9dd6f463b7a82d3459ae0c373f05e840, type: 3}
   - {fileID: 3672994199867109980, guid: 48bfccb98e213294a9d97fb5ea7aea70, type: 3}
   - {fileID: 8937432982170586313, guid: bb289d6edd897394197d0706bf31c0c5, type: 3}
   - {fileID: 5719563536702522003, guid: 794e6b0acaa4e744ca3dc7087245ce2a, type: 3}
   - {fileID: 5719563536702522003, guid: 794e6b0acaa4e744ca3dc7087245ce2a, type: 3}
-  - {fileID: 2056249576601250102, guid: 24057d47975e2264685b10526b72fdc3, type: 3}
+  - {fileID: 5719563536702522003, guid: 794e6b0acaa4e744ca3dc7087245ce2a, type: 3}
   - {fileID: 122324123310338846, guid: f8630046d08f18248a1de6eff6dc1fc6, type: 3}
-  - {fileID: 1945762187021100789, guid: 67e88c8881722b94285e4a7d8ae53375, type: 3}
   - {fileID: 3456815498110713695, guid: 1ebdabf7061d1e24e8a88601fdb54280, type: 3}
   - {fileID: 3378040390434981910, guid: cde45ecf86a23674ea1be7d7f1c680e2, type: 3}
+  - {fileID: 1945762187021100789, guid: 67e88c8881722b94285e4a7d8ae53375, type: 3}
   isClear: 0
 --- !u!4 &1815199814
 Transform:
@@ -1219,7 +1221,7 @@ GameObject:
   - component: {fileID: 1841186408}
   - component: {fileID: 1841186407}
   m_Layer: 5
-  m_Name: BubbleStageCanvas
+  m_Name: NoticeCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
