@@ -42,7 +42,7 @@ public class VoidObject : MonoBehaviour
             Instantiate(obstacles[i], new Vector2(0, -5), Quaternion.identity);
             yield return new WaitForSeconds(0.3f);
         }
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(0.5f);
         Sequence sequence = DOTween.Sequence();
         sequence.Append(transform.DOMove(new Vector3(transform.position.x, -4f), 1f))
             .Join(noticeText.DOFade(0f, 1f))
@@ -65,7 +65,7 @@ public class VoidObject : MonoBehaviour
             obstacleRigid.gravityScale = -obstacleRigid.gravityScale;
             yield return new WaitForSeconds(0.3f);
         }
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(0.5f);
         noticeText.text = string.Empty;
         GameManager.instance.GamePlaying();
     }
