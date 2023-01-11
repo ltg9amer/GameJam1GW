@@ -161,7 +161,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1087236365483570022}
   m_Layer: 0
-  m_Name: BallooneStage
+  m_Name: BalloonStage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
