@@ -32,7 +32,7 @@ public class FlappyBirdStage : MonoBehaviour
     public void InitStage()
     {
         transform.position = new Vector3(-4f, 0f);
-        transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y);
+        transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y);
 
         worm.SetActive(true);
         
@@ -71,12 +71,12 @@ public class FlappyBirdStage : MonoBehaviour
                 _rigidbody2D.velocity = Vector3.zero;
             })
                 .Append(transform.DOMove(collision.transform.position, 0.5f))
-                .Join(noticeText.DOFade(0f, 1f))
+                .Join(noticeText.DOFade(0f, 0.5f))
                 .AppendCallback(() =>
                 {
                     noticeText.text = "장애물을 피해 둥지로 돌아가세요!";
                 })
-                .Append(noticeText.DOFade(1f, 1f))
+                .Append(noticeText.DOFade(1f, 0.5f))
                 .AppendCallback(() =>
                 {
                     isTurn = false;
