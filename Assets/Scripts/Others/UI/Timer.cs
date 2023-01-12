@@ -9,7 +9,9 @@ public class Timer : MonoBehaviour
     public static Timer instance;
 
     private float minute = 0;
+    public float Minute => minute;
     private float second = 0;
+    public float Second => second;
 
     [SerializeField] private bool isRecording = true;
 

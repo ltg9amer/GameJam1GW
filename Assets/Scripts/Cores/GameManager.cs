@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     [SerializeField] private List<GameObject> stagePrefabs;
-    private bool isClear;
+    private bool isClear = false;
     public bool IsClear => isClear;
 
     private GameObject playground;
@@ -29,9 +29,12 @@ public class GameManager : MonoBehaviour
     private bool canLoadSetting = true;
     public bool CanLoadSetting => canLoadSetting;
     private int currentStage;
+    public int CurrentStage => currentStage;
+    public int stageCount;
 
     private void Awake()
     {
+        stageCount = stagePrefabs.Count;
         Cursor.SetCursor(mouseCursorTexture, new Vector2(0, 0), CursorMode.ForceSoftware);
 
         if (instance == null)
@@ -186,6 +189,8 @@ public class GameManager : MonoBehaviour
 
         if (currentStage == stagePrefabs.Count)
         {
+            Debug.Log(currentStage);
+            Debug.Log(stagePrefabs.Count);
             isClear = true;
             audioSource.Stop();
         }
