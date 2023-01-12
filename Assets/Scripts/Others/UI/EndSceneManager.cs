@@ -17,18 +17,12 @@ public class EndSceneManager : MonoBehaviour
             //클리어
             resultText.text = "CLEAR!!";
             if (Timer.instance.Second >= 10)
-            {
-                caption.text = $"0{Timer.instance.Minute} : {Mathf.Floor(Timer.instance.Second % 60)}";
-            }
-            else
-            {
-                caption.text = $"0{Timer.instance.Minute} : {Mathf.Floor(Timer.instance.Second % 60)}";
-            }
+                caption.text = $"{Timer.instance.Minute} : {Mathf.Floor(Timer.instance.Second % 60).ToString("00")}";
         }
         else
         {
             resultText.text = "Fail...";
-            caption.text = $"{GameManager.instance.CurrentStage - 1} Stage 클리어, 앞으로{GameManager.instance.stageCount - GameManager.instance.CurrentStage + 1}남음";
+            caption.text = $"{GameManager.instance.CurrentStage} Stage 클리어, 앞으로 {GameManager.instance.stageCount - GameManager.instance.CurrentStage} Stage 남음";
         }
     }
 

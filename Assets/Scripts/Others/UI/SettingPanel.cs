@@ -16,6 +16,11 @@ public class SettingPanel : MonoBehaviour
         button = GetComponent<Button>();
     }
 
+    private void Start()
+    {
+        GameManager.instance.IsBeforeStart = true;
+    }
+
     public void OnClick()
     {
         if (!GameManager.instance.CanLoadSetting) return;

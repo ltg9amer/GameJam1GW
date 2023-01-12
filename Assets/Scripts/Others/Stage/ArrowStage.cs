@@ -81,7 +81,6 @@ public class ArrowStage : MonoBehaviour
         arrowList.RemoveAt(pointer);
         if (arrowList.Count == 0)
         {
-            Debug.Log("���� ��������");
             GameManager.instance.GamePlaying();
         }
     }
