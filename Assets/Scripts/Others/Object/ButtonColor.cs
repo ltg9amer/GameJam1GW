@@ -15,7 +15,7 @@ public class ButtonColor : MonoBehaviour
 
     private void OnEnable()
     {
-        image.color = colors[Random.Range(0, colors.Length)];
+        image.color = colors[index = Random.Range(0, colors.Length)];
     }
     
     public void ChangeColor()
