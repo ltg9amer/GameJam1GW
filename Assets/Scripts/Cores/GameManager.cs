@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -22,6 +23,11 @@ public class GameManager : MonoBehaviour
     private GameObject currentStageObject;
     private Animator timAnimator;
     private AudioSource audioSource;
+    public AudioSource AudioSource
+    {
+        get { return audioSource; }
+        set { audioSource = value; }
+    }
     private TextMeshProUGUI playText;
     private TextMeshProUGUI stageText;
     private Sequence pressStartTextSequence;
