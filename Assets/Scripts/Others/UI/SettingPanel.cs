@@ -1,6 +1,4 @@
 using DG.Tweening;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,22 +21,27 @@ public class SettingPanel : MonoBehaviour
 
     public void OnClick()
     {
+        Sequence seq = DOTween.Sequence();
         if (!GameManager.instance.CanLoadSetting) return;
-
+        button.enabled = false;
         if (settingPanel.activeSelf)
         {
-            Sequence seq = DOTween.Sequence()
-            .Append(settingPanel.transform.DOMove(hidePos.transform.position, 1))
+            seq.Append(settingPanel.transform.DOMove(hidePos.transform.position, 1))
             .AppendCallback(() =>
             {
                 settingPanel.SetActive(!settingPanel.activeSelf);
+                button.enabled = true;
             });
             //숨기기
         }
         else
         {
             settingPanel.SetActive(!settingPanel.activeSelf);
-            settingPanel.transform.DOMove(showPos.transform.position, 1);
+            seq.Append(settingPanel.transform.DOMove(showPos.transform.position, 1))
+            .AppendCallback(() =>
+            {
+                button.enabled = true;
+            });
             //보여주기
         }
     }
