@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     private bool isClear = false;
     public bool IsClear => isClear;
 
+    [SerializeField] private List<AudioClip> clipList;
     private GameObject playground;
     private GameObject titleText;
     private GameObject pressStartText;
@@ -189,6 +190,7 @@ public class GameManager : MonoBehaviour
     {
         if (currentStageObject != null)
         {
+            AudioSource.PlayClipAtPoint(clipList[0], transform.position);
             Destroy(currentStageObject);
         }
 
@@ -206,6 +208,7 @@ public class GameManager : MonoBehaviour
     {
         isPlaying = false;
         canLoadSetting = true;
+        AudioSource.PlayClipAtPoint(clipList[1], transform.position);
         Timer.instance.StopRecord();
 
         if (currentStage == stageCount)

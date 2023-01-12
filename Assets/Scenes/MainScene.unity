@@ -1178,7 +1178,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uCD5C\uACE0 \uAE30\uB85D"
+  m_text: Best Record
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9192dee102ce3584ab6be141b418bd9d, type: 2}
   m_sharedMaterial: {fileID: -8565676723556663594, guid: 9192dee102ce3584ab6be141b418bd9d, type: 2}
@@ -1591,7 +1591,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uAC1C\uBC1C\uC790 \uAE30\uB85D"
+  m_text: 'Developer Record
+
+    0 : 54'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9192dee102ce3584ab6be141b418bd9d, type: 2}
   m_sharedMaterial: {fileID: -8565676723556663594, guid: 9192dee102ce3584ab6be141b418bd9d, type: 2}
@@ -1936,7 +1938,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fa75faa824cab4448e69c230f2ce9a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  devRecord: {fileID: 1460975275}
   bestRecord: {fileID: 672262693}
 --- !u!1 &1815199811
 GameObject:
@@ -2086,6 +2087,9 @@ MonoBehaviour:
   - {fileID: 3378040390434981910, guid: cde45ecf86a23674ea1be7d7f1c680e2, type: 3}
   - {fileID: 1945762187021100789, guid: 67e88c8881722b94285e4a7d8ae53375, type: 3}
   - {fileID: 3223587588923494643, guid: 9dd6f463b7a82d3459ae0c373f05e840, type: 3}
+  clipList:
+  - {fileID: 8300000, guid: eecf1b9e45a58c5419db0c59e766a975, type: 3}
+  - {fileID: 8300000, guid: 69ea38e843c008f45a08f7c46facbecd, type: 3}
   stageCount: 0
 --- !u!4 &1815199814
 Transform:
@@ -2095,7 +2099,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1815199811}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 960, y: 540, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
