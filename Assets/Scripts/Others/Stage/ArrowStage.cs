@@ -12,7 +12,13 @@ public class ArrowStage : MonoBehaviour
 
     [SerializeField] List<GameObject> arrowList = new List<GameObject>();
 
+    AudioSource _audio;
     private int pointer = 0;
+
+    private void Awake()
+    {
+        _audio = GetComponent<AudioSource>();
+    }
 
     private void OnEnable()
     {
@@ -70,6 +76,7 @@ public class ArrowStage : MonoBehaviour
 
     private void RemoveObj()
     {
+        _audio.Play();
         Destroy(arrowList[pointer]);
         arrowList.RemoveAt(pointer);
         if (arrowList.Count == 0)
