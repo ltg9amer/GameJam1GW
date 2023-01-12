@@ -1520,7 +1520,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e5ab0f973f0a6ac4c99b7fa3e2649f57, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b30d310b78d614b4da8a1874aa183be9, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1628,16 +1628,17 @@ MonoBehaviour:
   - {fileID: 1087236365483570020, guid: 6d6f4459b67dd74468331296fa066d2b, type: 3}
   - {fileID: 2377081260223177495, guid: 2318f1d975dc15744b456bf50fe8ad52, type: 3}
   - {fileID: 2377081260223177495, guid: c6aaf465f395c4348b0c38d67ec622ff, type: 3}
-  - {fileID: 3223587588923494643, guid: 9dd6f463b7a82d3459ae0c373f05e840, type: 3}
   - {fileID: 3672994199867109980, guid: 48bfccb98e213294a9d97fb5ea7aea70, type: 3}
   - {fileID: 8937432982170586313, guid: bb289d6edd897394197d0706bf31c0c5, type: 3}
   - {fileID: 5719563536702522003, guid: 794e6b0acaa4e744ca3dc7087245ce2a, type: 3}
   - {fileID: 5719563536702522003, guid: 794e6b0acaa4e744ca3dc7087245ce2a, type: 3}
   - {fileID: 5719563536702522003, guid: 794e6b0acaa4e744ca3dc7087245ce2a, type: 3}
+  - {fileID: 5953023912400850771, guid: 7c269b9590143c543b853e2ac923556c, type: 3}
   - {fileID: 122324123310338846, guid: f8630046d08f18248a1de6eff6dc1fc6, type: 3}
   - {fileID: 3456815498110713695, guid: 1ebdabf7061d1e24e8a88601fdb54280, type: 3}
   - {fileID: 3378040390434981910, guid: cde45ecf86a23674ea1be7d7f1c680e2, type: 3}
   - {fileID: 1945762187021100789, guid: 67e88c8881722b94285e4a7d8ae53375, type: 3}
+  - {fileID: 3223587588923494643, guid: 9dd6f463b7a82d3459ae0c373f05e840, type: 3}
   stageCount: 0
 --- !u!4 &1815199814
 Transform:
@@ -1780,6 +1781,7 @@ GameObject:
   - component: {fileID: 1866998078}
   - component: {fileID: 1866998077}
   - component: {fileID: 1866998076}
+  - component: {fileID: 1866998079}
   m_Layer: 5
   m_Name: PlayButton
   m_TagString: Untagged
@@ -1852,9 +1854,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1815199813}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: GameStart
+      - m_Target: {fileID: 1866998079}
+        m_TargetAssemblyTypeName: PlayButton, Assembly-CSharp
+        m_MethodName: ClickPlayButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1902,6 +1904,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1866998074}
   m_CullTransparentMesh: 1
+--- !u!114 &1866998079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866998074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92b652123d66eaa4b965915b70cff37c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1899209653
 GameObject:
   m_ObjectHideFlags: 0

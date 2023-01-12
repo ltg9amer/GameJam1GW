@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -24,6 +25,19 @@ public class GameManager : MonoBehaviour
     private TextMeshProUGUI stageText;
     private Sequence pressStartTextSequence;
     private bool isBeforeStart = true;
+    public bool IsBeforeStart
+    {
+        get { return isBeforeStart; }
+        set
+        {
+            isBeforeStart = value;
+
+            if (isBeforeStart)
+            {
+                InitGame();
+            }
+        }
+    }
     private bool isBeforePlay;
     private bool isPlaying;
     private bool canLoadSetting = true;
@@ -34,9 +48,6 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        stageCount = stagePrefabs.Count;
-        Cursor.SetCursor(mouseCursorTexture, new Vector2(0, 0), CursorMode.ForceSoftware);
-
         if (instance == null)
         {
             instance = this;
@@ -47,19 +58,11 @@ public class GameManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
-
-        playground = GameObject.Find("Playground");
-        titleText = GameObject.Find("TitleText");
-        pressStartText = GameObject.Find("PressStartText");
-        playButton = GameObject.Find("PlayButton");
-        playText = playButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-        stageText = GameObject.Find("StageText").GetComponent<TextMeshProUGUI>();
-        timAnimator = GameObject.Find("TiM").GetComponent<Animator>();
-        audioSource = GetComponent<AudioSource>();
     }
 
     private void Start()
     {
+        InitGame();
         PressStartText();
     }
 
@@ -94,8 +97,26 @@ public class GameManager : MonoBehaviour
         }
         else if (!audioSource.isPlaying && isPlaying)
         {
+            currentStage--;
+
             GameStop();
         }
+    }
+
+    private void InitGame()
+    {
+        stageCount = stagePrefabs.Count;
+        currentStage = 0;
+        Cursor.SetCursor(mouseCursorTexture, new Vector2(0, 0), CursorMode.ForceSoftware);
+
+        playground = GameObject.Find("Playground");
+        titleText = GameObject.Find("TitleText");
+        pressStartText = GameObject.Find("PressStartText");
+        playButton = GameObject.Find("PlayButton");
+        playText = playButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+        stageText = GameObject.Find("StageText").GetComponent<TextMeshProUGUI>();
+        timAnimator = GameObject.Find("TiM").GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void GameStart()
@@ -121,7 +142,7 @@ public class GameManager : MonoBehaviour
                 .AppendCallback(() =>
                 {
                     playText.DOFade(1, 0);
-                    playText.text = "음원 길이 : 약 1분 30초";
+                    playText.text = "음원 길이 : 약 1분 26초";
                 })
                 .AppendInterval(1f)
                 .Append(playText.DOFade(0, 0.25f))
@@ -171,7 +192,7 @@ public class GameManager : MonoBehaviour
             Destroy(currentStageObject);
         }
 
-        if (currentStage != stagePrefabs.Count)
+        if (currentStage != stageCount)
         {
             currentStageObject = Instantiate(stagePrefabs[++currentStage - 1]);
         }
@@ -187,10 +208,8 @@ public class GameManager : MonoBehaviour
         canLoadSetting = true;
         Timer.instance.StopRecord();
 
-        if (currentStage == stagePrefabs.Count)
+        if (currentStage == stageCount)
         {
-            Debug.Log(currentStage);
-            Debug.Log(stagePrefabs.Count);
             isClear = true;
             audioSource.Stop();
         }
