@@ -136,4 +136,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72b433af14dedd24e994018db0192e8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  crashClip: {fileID: 8300000, guid: 5bbf9931dfc1029449eba68fb88deb97, type: 3}
   speed: 15

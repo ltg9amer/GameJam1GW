@@ -14,12 +14,6 @@ public class EndSceneManager : MonoBehaviour
     {
         if (GameManager.instance.IsClear)
         {
-#if UNITY_EDITOR
-            if ((int)Timer.instance.Second < PlayerPrefs.GetInt("DevRecord", 86))
-            {
-                PlayerPrefs.SetInt("DevRecord", (int)Timer.instance.Second);
-            }
-#endif
             //Å¬¸®¾î
             if ((int)Timer.instance.Second < PlayerPrefs.GetInt("Record", 86))
             {
