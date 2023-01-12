@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
     public bool CanLoadSetting => canLoadSetting;
     private int currentStage;
     public int CurrentStage => currentStage;
-    public int stageCount;
+    [HideInInspector] public int stageCount;
 
     private void Awake()
     {
