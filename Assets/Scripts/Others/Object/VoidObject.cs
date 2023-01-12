@@ -65,7 +65,7 @@ public class VoidObject : MonoBehaviour
             obstacleRigid.gravityScale = -obstacleRigid.gravityScale;
             yield return new WaitForSeconds(0.3f);
         }
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.7f);
         noticeText.text = string.Empty;
         GameManager.instance.GamePlaying();
     }
