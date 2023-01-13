@@ -1593,7 +1593,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Developer Record
 
-    0 : 54'
+    0 : 53'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9192dee102ce3584ab6be141b418bd9d, type: 2}
   m_sharedMaterial: {fileID: -8565676723556663594, guid: 9192dee102ce3584ab6be141b418bd9d, type: 2}
